@@ -1,0 +1,40 @@
+.book-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+}
+  
+.book-header {
+    display: flex;
+}
+
+.header-item {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.book-item {
+    display: flex;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+  
+.book-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.book-details {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+  
+.book-actions {
+    display: flex;
+    gap: 8px;
+}

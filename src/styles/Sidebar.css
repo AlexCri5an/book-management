@@ -1,0 +1,26 @@
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ababab;
+    padding-top: 20px;
+      
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main {
+    margin-left: 100px; 
+    padding: 80px 20px 20px 20px; 
+    flex: 1; 
+}
+
+header {
+    margin-left: 100px; 
+}
+
