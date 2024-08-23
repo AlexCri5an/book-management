@@ -1,32 +1,34 @@
-.form-container {
+.book-details {
   width: 300px;
   margin: 70px auto;
   padding: 20px;
   border: 1px solid #6f6555;
   background-color: #f4f4f4;
 }
-.form-container h1 {
+
+.book-details h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #6f6555;
 }
 
-.form-item {
+.book-details p {
   margin-bottom: 20px;
-  color: #6f6555;
+  color: #4e473c;
 }
 
-.form-button button {
+.book-details button {
   display: inline-block;
   background-color: #6f6555;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 4px;
-  margin-right: 10px;
-  font-size: small;
+  margin-right: 8px;
 }
 
-.form-button button:hover {
-  background-color: #5a4c44;
+.book-details button:hover {
+  background-color: #5b5045;
 }
+
+

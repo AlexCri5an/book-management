@@ -7,6 +7,8 @@ const Footer = () => {
       <p>Created by Crisan Alexandru</p>
     </footer>
   );
+
+
 };
 
 export default Footer;

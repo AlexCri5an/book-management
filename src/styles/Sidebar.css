@@ -4,20 +4,26 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #ababab;
+    background-color: #333333;
     padding-top: 20px;
-      
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar button {
+    cursor:pointer;
+    background-color: #333333;
+    color: white;
+}
+
+.sidebar button:hover {
+    background-color: #212121;
 }
 
 .sidebar ul {
     list-style-type: none;
     padding: 0;
-}
-
-main {
-    margin-left: 100px; 
-    padding: 80px 20px 20px 20px; 
-    flex: 1; 
 }
 
 header {

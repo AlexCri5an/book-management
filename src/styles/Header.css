@@ -1,12 +1,21 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+  background-color: #6f6555;
+  color: #ecf0f1;
+  font-size: 13px;
 }
 
+.header button {
+  width: 110px;
+  height: 30px;
+  font-size: small;
+  cursor: pointer;
+  color: #6f6555;
+}
 
-  
+.header button:hover {
+  background-color: #c7c6c6;
+}

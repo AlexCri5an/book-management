@@ -2,39 +2,53 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 16px;
+    margin-bottom: 60px; 
+    
 }
-  
-.book-header {
-    display: flex;
+
+table {
+    width: 1000px;
+    border-collapse: collapse; 
+    
 }
 
 .header-item {
-    flex: 1;
+    display: table-cell;
     padding: 8px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 1px solid #6f6555;
+    font-size: 18px;
+    background-color: #f4f4f4;
 }
 
-.book-item {
-    display: flex;
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
+
+
+.book-title, .book-author, .book-genre, .book-publication-data {
+    display: table-cell;
+    width: 200px; 
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #6f6555;
 }
-  
-.book-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-  
-.book-details {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-}
-  
+
 .book-actions {
-    display: flex;
-    gap: 8px;
+    width: 200px;
+    display: table-cell;
+    padding: 8px;
+    border: 1px solid #6f6555;
 }
+
+.book-actions button {
+    display: inline-block;
+    background-color: #6f6555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.book-actions button:hover {
+    background-color: #5b5045;
+}
+

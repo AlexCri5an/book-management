@@ -1,55 +1,68 @@
 import React from "react";
-import "../styles/BookForm.css";
-import { useState } from "react";
 import { IBook } from "../types";
+import { useState, useEffect } from "react";
+import "../styles/EditBookForm.css";
 
 type Props = {
+  book: IBook;
   onSubmitClickHnd: (data: IBook) => void;
   onBackBtnClickHnd: () => void;
 };
+const EditBookDetails = (props: Props) => {
+  const { book, onSubmitClickHnd, onBackBtnClickHnd } = props;
+  const [title, setTitle] = useState(book.title);
+  const [author, setAuthor] = useState(book.author);
+  const [genre, setGenre] = useState(book.genre);
+  const [publicationDate, setPublicationDate] = useState(book.publicationDate);
+  const [description, setDescription] = useState(book.description);
 
-const AddBookForm = (props: Props) => {
-  const { onSubmitClickHnd, onBackBtnClickHnd } = props;
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [genre, setGenre] = useState("");
-  const [publicationDate, setPublicationDate] = useState("");
-  const [description, setDescription] = useState("");
+  useEffect(() => {
+    setTitle(book.title);
+    setAuthor(book.author);
+    setGenre(book.genre);
+    setPublicationDate(book.publicationDate);
+    setDescription(book.description);
+  }, [book]);
+
   const onTitleChangeHnd = (e: any) => {
     setTitle(e.target.value);
   };
+
   const onAuthorChangeHnd = (e: any) => {
     setAuthor(e.target.value);
   };
+
   const onGenreChangeHnd = (e: any) => {
     setGenre(e.target.value);
   };
+
   const onPublicationDateChangeHnd = (e: any) => {
     setPublicationDate(e.target.value);
   };
+
   const onDescriptionChangeHnd = (e: any) => {
     setDescription(e.target.value);
   };
 
   const onSubmitBtnClickHnd = (e: any) => {
     e.preventDefault();
-    const data: IBook = {
-      id: new Date().toJSON().toString(),
+    const updatedBook: IBook = {
+      id: book.id,
       title: title,
       author: author,
       genre: genre,
       publicationDate: publicationDate,
       description: description,
     };
-    onSubmitClickHnd(data);
+    onSubmitClickHnd(updatedBook);
   };
 
   return (
     <div className="form-container">
-      <h1>Add Book Form</h1>
+      <h1>Edit Book Form</h1>
       <form className="book-form" onSubmit={onSubmitBtnClickHnd}>
         <div className="form-item">
-          <label>Title:</label>
+          <label>Title: </label>
           <input type="text" id="title" name="title" required value={title} onChange={onTitleChangeHnd} />
         </div>
         <div className="form-item">
@@ -72,12 +85,11 @@ const AddBookForm = (props: Props) => {
           <button type="button" onClick={onBackBtnClickHnd}>
             Back
           </button>
-          <button type="submit">Add Book</button>
+          <button type="submit">Edit Book</button>
         </div>
       </form>
     </div>
   );
 };
 
-export default AddBookForm;
-
+export default EditBookDetails;

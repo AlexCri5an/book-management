@@ -1,39 +1,46 @@
-import React from 'react';
-import '../styles/BookList.css';
+import "../styles/BookList.css";
+import { IBook } from "../types";
+import "../styles/BookDetails.css";
 
-const books = [
-  { id: 1, title: 'Book 1', author: 'Author 1', genre: 'Genre 1', publicationDate: '2023-01-01' },
-  { id: 2, title: 'Book 2', author: 'Author 2', genre: 'Genre 2', publicationDate: '2023-02-01' },
-  { id: 3, title: 'Book 3', author: 'Author 3', genre: 'Genre 3', publicationDate: '2023-03-01' }
-];
+type Props = {
+  list: IBook[];
+  onDeleteClickHnd: (data: IBook) => void;
+  onViewClickHnd: (data: IBook) => void;
+  onEditClickHnd: (data: IBook) => void;
+};
 
-const BookList = () => {
+const BookList = (props: Props) => {
+  const { list, onDeleteClickHnd, onViewClickHnd, onEditClickHnd } = props;
+
   return (
     <div className="book-list">
-      <div className="book-header">
-        <div className="header-item">Title</div>
-        <div className="header-item">Author</div>
-        <div className="header-item">Genre</div>
-        <div className="header-item">Publication Date</div>
-        <div className="header-item">Actions</div>
-      </div>
-      <ul className="book-items">
-        {books.map(book => (
-          <li key={book.id} className="book-item">
-            <div className="book-details">
-              <span>{book.title}</span>
-              <span>{book.author}</span>
-              <span>{book.genre}</span>
-              <span>{book.publicationDate}</span>
-            </div>
-            <div className="book-actions">
-              <button>EDIT</button>
-              <button>DELETE</button>
-              <button>VIEW</button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr className="book-header">
+            <th className="header-item">Title</th>
+            <th className="header-item">Author</th>
+            <th className="header-item">Genre</th>
+            <th className="header-item">Publication Date</th>
+            <th className="header-item">Actions</th>
+          </tr>
+        </thead>
+        <tbody className="book-items">
+          {list.map((book) => (
+            <tr key={book.id} className="book-item">
+              <td className="book-title">{book.title}</td>
+              <td className="book-author">{book.author}</td>
+              <td className="book-genre">{book.genre}</td>
+              <td className="book-publication-data">{book.publicationDate}</td>
+              <td className="book-actions">
+                <button onClick={() => onEditClickHnd(book)}>EDIT</button>
+                <button onClick={() => onDeleteClickHnd(book)}>DELETE</button>
+                <button onClick={() => onViewClickHnd(book)}>VIEW</button>
+              </td>
+            </tr>
+
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
